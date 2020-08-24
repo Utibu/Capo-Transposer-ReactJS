@@ -23,9 +23,7 @@ class ChordTile extends Component {
 
     validateChord(chord) {
         if(chord.length >= 0) {
-            if((chord.length === 1 && chord[0].match("[A-Ha-h]")) || chord === "") {
-                return chord
-            } else if(chord.length === 2 && chord[1].match("[#b]")) {
+            if((chord.length >= 1 && chord[0].match("[A-Ha-h]")) || chord === "") {
                 return chord
             } else {
                 throw new Error("False chord")
