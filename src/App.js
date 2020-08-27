@@ -7,6 +7,7 @@ import About from "./components/About"
 import Transpose from "./components/Transpose"
 import RouterParameter from "./components/RouterParameter"
 import TransposeRedux from "./components/TransposeRedux"
+import "./css/style.scss"
 
 function App() {
     //const [ counter, setCounter ] = useState(0)

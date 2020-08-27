@@ -3,6 +3,7 @@ import {cloneDeep} from "lodash"
 import { useSelector, useDispatch } from "react-redux"
 
 import ChordTile from "./ChordTile"
+import GuitarNeck from "./GuitarNeck"
 import { increaseCounter, setChords, updateChords, increaseTransposition } from "../actions"
 
 /*class Transpose extends Component {
@@ -332,7 +333,10 @@ function TransposeRedux() {
 
     return (
         <div>
-            {chordTiles}
+            <GuitarNeck capoPosition={transpositionNumber}/>
+            <div className="tileContainer">
+                {chordTiles}
+            </div>
             <h3>Transposition: {transpositionNumber}</h3>
             <button name="increase" onClick={transpose}>Increase</button>
             <button name="decrease" onClick={transpose}>Decrease</button>

@@ -1,0 +1,62 @@
+$primaryColor: orange;
+$borderColor: #cecece;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: $primaryColor;
+}
+
+.tileContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.tileContainer {
+
+    input {
+        align-content: center;
+        display: flex;
+        padding: 40px 40px;
+        flex: 0 0 33.3333333%;
+        border: 1px solid $borderColor;
+    }
+    
+}
+
+.guitar {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    position: relative;
+
+    .guitarNeck {
+        width: 100%;
+    }
+
+    .capo {
+        position: relative;
+        /*width: 40%;*/
+    }
+
+    .capoContainer {
+        width: 2%;
+        position: absolute;
+        left: 32.5%;
+        top: 5%;
+
+        h5 {
+            font-size: 24px;
+            margin: 0 0 10px 0;
+            text-align: center;
+            color: #000;
+        }
+    }
+}
