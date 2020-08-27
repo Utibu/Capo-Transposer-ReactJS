@@ -43,20 +43,35 @@ body {
 
     .capo {
         position: relative;
-        /*width: 40%;*/
+        width: 40%;
     }
 
     .capoContainer {
-        width: 2%;
+        width: 5%;
         position: absolute;
         left: 32.5%;
-        top: 5%;
+        top: 15%;
+        text-align: center;
+    }
 
-        h5 {
-            font-size: 24px;
-            margin: 0 0 10px 0;
-            text-align: center;
-            color: #000;
-        }
+    h5 {
+        font-size: 100%;
+        margin: 0 0 10px 0;
+        color: #000;
+        position: absolute;
+        top: 5%;
+        left: 40%;
+    }
+
+    .capoPosition {
+        font-size: 3px;
+        font-family: Helvetica, Arial, sans-serif;
+    }
+
+    .capoSvg {
+        position: absolute;
+        bottom: 3%;
+        left: 31%;
+        z-index: -1;
     }
 }
