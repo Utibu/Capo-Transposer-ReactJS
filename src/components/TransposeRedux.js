@@ -15,13 +15,7 @@ function TransposeRedux() {
     const transpositionNumber = useSelector(state => state.transpositionNumber)
     const dispatch = useDispatch()
     
-    useEffect(() => {
-        let returnObject = {}
-            for(let i = 1; i <= 9; i++) {
-                returnObject[i] = { id: i, ["chord"]: "", "symbol": "#" }
-            }
-        dispatch(setChords(returnObject))
-    }, [])
+    
 
     function transpose(event) {
         const toAdd = event.target.name === "increase" ? 1 : -1
@@ -164,13 +158,13 @@ function TransposeRedux() {
                     name="increase"
                     value="Increase"
                     transpositionMethod={transpose} 
-                    tooltip="Useful to calculate original chords when using a capo. <br />Move the capo up as much as the transposition number says." 
+                    tooltip="Useful to calculate original chords when using a capo. Move the capo up as much as the transposition number says." 
                 />
                 <Button 
                     name="decrease"
                     value="Decrease"
                     transpositionMethod={transpose} 
-                    tooltip="Useful to find where to place your capo for easier playing. <br />Move the capo down as much as the transposition number reads, <br />or look at the guitar-graphic." 
+                    tooltip="Useful to find where to place your capo for easier playing. Move the capo down as much as the transposition number reads, or look at the guitar-graphic." 
                 />
             </div>
             <div className="tileContainer">

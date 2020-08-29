@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap');
 
-$primaryColor: orange;
+$primaryColor: #ffa801;
 $borderColor: #cecece;
 $placeholderColor: rgb(155, 155, 155);
 $inputHoverBackground: rgb(231, 231, 231);
@@ -28,19 +28,34 @@ body {
     justify-content: center;
 }
 
+.inputContainer {
+    display: flex;
+    flex: 0 0 33.3333333%;
+    width: 33.33333%;
+    position: relative;
+
+    button {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        padding: 5px 10px;
+        border-radius: 10px;
+        box-shadow: none;
+        border: 1px solid;
+    }
+}
+
 .tileContainer {
 
     input {
         align-content: center;
-        display: flex;
+        width: 100%;
         padding: 40px 10px;
-        flex: 0 0 33.3333333%;
         text-align: center;
         background: $darkWood;
         font-size: 20px;
         font-family: "Noto Sans TC", sans-serif;
         font-weight: 500;
-        width: 33.33333%;
         border: 0;
         letter-spacing: 1px;
         color: $metalHighlights;
@@ -144,6 +159,7 @@ nav {
 
 .tooltip {
     background: $linkColor !important;
+    max-width: 200px !important;
 }
 
 button {
@@ -158,6 +174,8 @@ button {
     font-weight: 500;
     cursor: pointer;
     box-shadow: 2px 2px 2px 0px #a56e0b;
+    border-radius: 10px;
+    border: 2px solid $metalHighlights;
     
     &:hover {
         background: $metalHighlights;
@@ -174,4 +192,32 @@ button {
 
 .transpositionButton {
     display: inline-block;
+}
+
+main {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+footer {
+    margin-top: 100px;
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        width: 80%;
+    }
+
+    .tileContainer {
+        input {
+            padding: 60px 40px;
+        }
+
+        button {
+            left: 50%;
+            margin: 0;
+            transform: translateX(-50%);
+        }
+    }
 }

@@ -1,14 +1,26 @@
-import React from "react"
+import React, {useEffect} from "react"
 import { Switch, Route } from "react-router-dom"
+import { useDispatch } from "react-redux"
 
 import About from "./components/About"
-import Transpose from "./components/Transpose"
-import RouterParameter from "./components/RouterParameter"
+import ChordPage from "./components/ChordPage"
 import TransposeRedux from "./components/TransposeRedux"
 import Header from "./components/Header"
+import Footer from "./components/Footer"
+import { setChords } from "./actions"
 import "./css/style.scss"
 
 function App() {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        let returnObject = {}
+            for(let i = 1; i <= 9; i++) {
+                returnObject[i] = { id: i, ["chord"]: "", "symbol": "#" }
+            }
+        dispatch(setChords(returnObject))
+    }, [])
+
     return (
         <div>
             <Header />
@@ -17,8 +29,8 @@ function App() {
                 <Route path="/about">
                     <About />
                 </Route>
-                <Route path="/router/:id">
-                    <RouterParameter />
+                <Route path="/chord/:chordName">
+                    <ChordPage />
                 </Route>
                 <Route path="/transposeredux">
                     <TransposeRedux />
@@ -27,6 +39,7 @@ function App() {
                     <TransposeRedux />
                 </Route>
             </Switch>
+            <Footer />
         </div>
         
     )

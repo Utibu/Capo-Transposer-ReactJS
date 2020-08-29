@@ -1,4 +1,5 @@
 import React, {Component} from "react"
+import RedirectButton from "./RedirectButton"
 
 class ChordTile extends Component {
     constructor() {
@@ -58,9 +59,18 @@ class ChordTile extends Component {
     }
 
     render() {
+        const chordUrl = this.props.chordName.replace("#", "$")
+        const chordButton = this.props.chordName.length > 0 && 
+        (<RedirectButton 
+            value="..."
+            path={`/chord/${chordUrl}`}
+        />)
         
         return (
-            <input type="text" name="chord" placeholder={this.state.placeholder} value={this.props.chordName} onChange={this.handleChange}/>
+            <div className="inputContainer">
+                {chordButton}
+                <input type="text" name="chord" placeholder={this.state.placeholder} value={this.props.chordName} onChange={this.handleChange}/>
+            </div>
         )
     }
 }

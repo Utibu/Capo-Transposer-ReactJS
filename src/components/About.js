@@ -2,7 +2,10 @@ import React from "react"
 
 function About() {
     return (
-        <h1>About</h1>
+        <main>
+            <h1>About</h1>
+            <p>Capo Transposer was developed as a tool to help you find the chords you want to play without frying your brain.</p>
+        </main>
     )
 }
 
