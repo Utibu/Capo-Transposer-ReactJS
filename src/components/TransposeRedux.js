@@ -18,6 +18,7 @@ function TransposeRedux() {
     
 
     function transpose(event) {
+        event.preventDefault();
         const toAdd = event.target.name === "increase" ? 1 : -1
         dispatch(increaseTransposition(toAdd))
 

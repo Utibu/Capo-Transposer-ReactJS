@@ -22,11 +22,15 @@ function GuitarNeck(props) {
                 }}>
                 <img src={capo} className="capo"/>
             </motion.div>
-            <svg viewBox="0 0 56 6" className="capoSvg">
-                <text x="0" y="4" className="capoPosition">Transposition: {props.capoPosition}</text>
-            </svg>
+            <h3 className="capoPosition">Transposition: {props.capoPosition}</h3>
         </div>
     )
 }
+
+/*
+            <svg viewBox="0 0 56 6" className="capoSvg">
+                <g><text x="0" y="4" className="capoPosition"></text></g>
+            </svg>
+*/
 
 export default GuitarNeck

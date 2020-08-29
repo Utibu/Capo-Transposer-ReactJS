@@ -11,7 +11,9 @@ $darkWood: #201d1a;
 $metalHighlights: #ddccb3;
 
 * {
-    box-sizing: border-box;
+    -webkit-box-sizing:border-box; 
+    -moz-box-sizing:border-box; 
+    box-sizing:border-box;
 }
 
 body {
@@ -59,6 +61,8 @@ body {
         border: 0;
         letter-spacing: 1px;
         color: $metalHighlights;
+        margin: 0;
+        border-radius: 0;
 
         &::placeholder {
             font-weight: 300;
@@ -106,24 +110,20 @@ body {
         text-align: center;
     }
 
-    h5 {
-        font-size: 100%;
-        margin: 0 0 10px 0;
-        color: #000;
-        position: absolute;
-        top: 5%;
-        left: 40%;
-    }
-
     .capoPosition {
-        font-size: 2.6px;
+        font-size: 2vw;
         font-family: "Hind", sans-serif;
         font-weight: bold;
+        color: #000;
+        position: absolute;
+        bottom: 5%;
+        left: 30.5%;
+        margin: 0;
     }
 
     .capoSvg {
         position: absolute;
-        bottom: 3%;
+        bottom: 3vh;
         left: 31%;
         z-index: -1;
     }
@@ -160,6 +160,7 @@ nav {
 .tooltip {
     background: $linkColor !important;
     max-width: 200px !important;
+    pointer-events: auto !important;
 }
 
 button {
@@ -219,5 +220,21 @@ footer {
             margin: 0;
             transform: translateX(-50%);
         }
+    }
+    
+    .tileContainer {
+        width: 100%;
+    }
+
+    .guitar {
+        width: 80%;
+
+        .capoPosition {
+            font-size: 3vw;
+        }
+    }
+
+    .buttons {
+        width: 100%;
     }
 }
