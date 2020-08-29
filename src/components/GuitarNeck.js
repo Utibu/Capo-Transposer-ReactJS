@@ -6,7 +6,7 @@ import capo from "../images/capo.svg"
 
 function GuitarNeck(props) {
     const capoStepPercent = 5.9
-    const percentageFromLeft = props.capoPosition <= 0 ? 25.35 + 5.74 * Math.abs(props.capoPosition) : 25.15
+    const percentageFromLeft = props.capoPosition <= 0 ? 25.35 + 5.74 * Math.abs(props.capoPosition) : 25.35
 
     return (
         <div className="guitar" id="guitar">

@@ -1,5 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap');
+
 $primaryColor: orange;
 $borderColor: #cecece;
+$placeholderColor: rgb(155, 155, 155);
+$inputHoverBackground: rgb(231, 231, 231);
+$linkColor: #583a02;
+$darkWood: #201d1a;
+$metalHighlights: #ddccb3;
 
 * {
     box-sizing: border-box;
@@ -7,6 +16,7 @@ $borderColor: #cecece;
 
 body {
     background: $primaryColor;
+    font-family: "Noto Sans TC", sans-serif;
 }
 
 .tileContainer {
@@ -23,19 +33,46 @@ body {
     input {
         align-content: center;
         display: flex;
-        padding: 40px 40px;
+        padding: 40px 10px;
         flex: 0 0 33.3333333%;
-        border: 1px solid $borderColor;
+        text-align: center;
+        background: $darkWood;
+        font-size: 20px;
+        font-family: "Noto Sans TC", sans-serif;
+        font-weight: 500;
+        width: 33.33333%;
+        border: 0;
+        letter-spacing: 1px;
+        color: $metalHighlights;
+
+        &::placeholder {
+            font-weight: 300;
+            color: $placeholderColor;
+        }
+
+        &:hover {
+            background: $metalHighlights;
+            color: $darkWood;
+
+            &::placeholder {
+                color: rgb(90, 90, 90);
+            }
+        }
+
+        &:active {
+            border: 0;
+        }
     }
     
 }
 
 .guitar {
-    width: 80%;
+    width: 60%;
     display: block;
     margin: 0 auto;
     margin-bottom: 40px;
     position: relative;
+    margin-top: -40px;
 
     .guitarNeck {
         width: 100%;
@@ -64,8 +101,9 @@ body {
     }
 
     .capoPosition {
-        font-size: 3px;
-        font-family: Helvetica, Arial, sans-serif;
+        font-size: 2.6px;
+        font-family: "Hind", sans-serif;
+        font-weight: bold;
     }
 
     .capoSvg {
@@ -74,4 +112,66 @@ body {
         left: 31%;
         z-index: -1;
     }
+}
+
+header {
+    text-align: center;
+    font-family: "Mulish", sans-serif;
+    
+    h1 {
+        margin-bottom: 10px;
+        font-weight: 800;
+        font-size: 48px;
+    }
+
+    h5 {
+        margin: 0 0 20px 0;
+        font-size: 16px;
+    }
+}
+
+nav {
+    a {
+        display: inline-block;
+        padding: 6px 20px;
+        color: $linkColor;
+
+        &:hover {
+            color: $darkWood;
+        }
+    }
+}
+
+.tooltip {
+    background: $linkColor !important;
+}
+
+button {
+    padding: 20px 40px;
+    border: 0;
+    font-size: 16px;
+    display: inline-block;
+    background: $darkWood;
+    color: $metalHighlights;
+    margin: 0 10px;
+    font-family: "Noto Sans TC";
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px 0px #a56e0b;
+    
+    &:hover {
+        background: $metalHighlights;
+        color: $darkWood;
+        box-shadow: none;
+    }
+}
+
+.buttons {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto 20px auto;
+}
+
+.transpositionButton {
+    display: inline-block;
 }

@@ -4,7 +4,7 @@ class ChordTile extends Component {
     constructor() {
         super()
         this.state = {
-            
+            placeholder: "C#"
         }
         this.handleChange = this.handleChange.bind(this)
     }
@@ -33,9 +33,34 @@ class ChordTile extends Component {
         }
     }
 
+    randomChord(chordArray) {
+        const randomNumber = Math.floor(Math.random() * chordArray.length)
+        const arrayItem = chordArray[randomNumber]
+        let chord = ""
+        if(Array.isArray(arrayItem)) {
+            chord = arrayItem[0]
+        } else {
+            chord = arrayItem
+        }
+
+        if(chord.length > 1 && chord[1] === "X") {
+            const randomNumber = Math.floor(Math.random() * 2)
+            const chordSymbol = randomNumber === 0 ? "#" : "b"
+            chord = chord[0] + chordSymbol + chord.substring(2)
+        }
+    
+        return chord;
+    }
+
+    componentDidMount() {
+        const placeholder = this.randomChord(this.props.chordArray)
+        this.setState({ placeholder: placeholder })
+    }
+
     render() {
+        
         return (
-            <input type="text" name="chord" placeholder="C#" value={this.props.chordName} onChange={this.handleChange}/>
+            <input type="text" name="chord" placeholder={this.state.placeholder} value={this.props.chordName} onChange={this.handleChange}/>
         )
     }
 }
