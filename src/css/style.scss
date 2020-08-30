@@ -9,6 +9,7 @@ $inputHoverBackground: rgb(231, 231, 231);
 $linkColor: #583a02;
 $darkWood: #201d1a;
 $metalHighlights: #ddccb3;
+$fretboard: #312d23;
 
 * {
     -webkit-box-sizing:border-box; 
@@ -189,10 +190,25 @@ button {
     width: 80%;
     text-align: center;
     margin: 0 auto 20px auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .transpositionButton {
     display: inline-block;
+
+    a {
+        padding: 10px 20px;
+        display: block;
+        color: $linkColor;
+        text-decoration: underline;
+
+        &:hover {
+            color: $darkWood;
+        }
+    }
 }
 
 main {
@@ -201,18 +217,47 @@ main {
     margin: 0 auto;
 }
 
-footer {
-    margin-top: 100px;
+.toggleTooltip {
+    position: absolute;
+    right: 0;
 }
 
-@media screen and (max-width: 600px) {
+footer {
+    text-align: center;
+    position: relative;
+    margin-top: 120px;
+
+    a {
+        margin: 20px auto;
+        display: block;
+        width: 150px;
+
+        img {
+            width: 100%;
+        }
+
+        &:hover img {
+            filter: brightness(0) invert(1);
+            -webkit-filter: brightness(0) invert(1);
+        }
+    }
+
+    .version {
+        font-size: 12px;
+        color: $fretboard;
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
     main {
         width: 80%;
     }
 
     .tileContainer {
         input {
-            padding: 60px 40px;
+            padding: 60px 10px;
         }
 
         button {
@@ -236,5 +281,9 @@ footer {
 
     .buttons {
         width: 100%;
+
+        label {
+            display: none;
+        }
     }
 }

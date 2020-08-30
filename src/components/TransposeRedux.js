@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux"
 import ChordTile from "./ChordTile"
 import GuitarNeck from "./GuitarNeck"
 import Button from "./TranspositionButton"
+import ToggleTooltip from "./ToggleTooltip"
 import { setChords, updateChords, increaseTransposition } from "../actions"
 
 function TransposeRedux() {
@@ -154,7 +155,7 @@ function TransposeRedux() {
     return (
         <div>
             <GuitarNeck capoPosition={transpositionNumber}/>
-            <div class="buttons">
+            <div className="buttons">
                 <Button 
                     name="increase"
                     value="Increase"
@@ -167,6 +168,7 @@ function TransposeRedux() {
                     transpositionMethod={transpose} 
                     tooltip="Useful to find where to place your capo for easier playing. Move the capo down as much as the transposition number reads, or look at the guitar-graphic." 
                 />
+                <ToggleTooltip />
             </div>
             <div className="tileContainer">
                 {chordTiles}

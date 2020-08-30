@@ -25,3 +25,10 @@ export const increaseTransposition = byNumber => {
         payload: byNumber
     }
 }
+
+export const setTooltipBool = toggle => {
+    return {
+        type: "SET_BOOL",
+        payload: toggle
+    }
+}
